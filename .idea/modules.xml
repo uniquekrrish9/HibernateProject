@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Myhibernate.iml" filepath="$PROJECT_DIR$/.idea/modules/Myhibernate.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Myhibernate_main.iml" filepath="$PROJECT_DIR$/.idea/modules/Myhibernate_main.iml" group="Myhibernate" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Myhibernate_test.iml" filepath="$PROJECT_DIR$/.idea/modules/Myhibernate_test.iml" group="Myhibernate" />
+    </modules>
+  </component>
+</project>
