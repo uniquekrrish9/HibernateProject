@@ -18,8 +18,10 @@ public class Student {
     @Column(name="Address")
     private String address;
 
-    @OneToMany(fetch = FetchType.LAZY,mappedBy = "student")
-    Set<Vehicle> vehicles = new HashSet<Vehicle>(0);
+    @ManyToOne
+    @JoinColumn(name="plan_id",nullable = false)
+    private Plan plan;
+
     public Student(){
 
     }
@@ -53,11 +55,11 @@ public class Student {
         this.address = address;
     }
 
-    public Set<Vehicle> getVehicles() {
-        return vehicles;
+    public Plan getPlan() {
+        return plan;
     }
 
-    public void setVehicles(Set<Vehicle> vehicles) {
-        this.vehicles = vehicles;
+    public void setPlan(Plan plan) {
+        this.plan = plan;
     }
 }

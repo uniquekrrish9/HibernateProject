@@ -14,5 +14,6 @@
         <mapping class="entities.Student"></mapping>
         <mapping class="entities.Address"></mapping>
         <mapping class="entities.Vehicle"></mapping>
+        <mapping class="entities.Plan"></mapping>
     </session-factory>
 </hibernate-configuration>

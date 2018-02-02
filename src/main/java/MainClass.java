@@ -1,4 +1,5 @@
 import entities.Address;
+import entities.Plan;
 import entities.Student;
 import entities.Vehicle;
 import org.hibernate.Session;
@@ -18,23 +19,14 @@ public class MainClass {
         session.beginTransaction();
 
         Student student = new Student("sita","Pokhara");
-//        Address address = new Address("pokhara","nayabazara",student);
-//        address.setStudent(address);
 
-//        session.save(address);
+
+
+        Plan plan = new Plan(2,"Premium");
+        session.save(plan);
+
+        student.setPlan(plan);
         session.save(student);
-
-        Vehicle vehicle = new Vehicle("Car");
-        Vehicle vehicle1 = new Vehicle("Bike");
-
-        vehicle.setStudent(student);
-        vehicle1.setStudent(student);
-
-        student.getVehicles().add(vehicle);
-        student.getVehicles().add(vehicle1);
-
-        session.save(vehicle);
-        session.save(vehicle1);
 
         session.getTransaction().commit();
         session.close();
