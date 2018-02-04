@@ -14,6 +14,9 @@ dependencies {
     compile group: 'org.hibernate', name: 'hibernate-gradle-plugin', version: '5.2.12.Final'
 // https://mvnrepository.com/artifact/mysql/mysql-connector-java
     compile group: 'mysql', name: 'mysql-connector-java', version: '6.0.4'
+    // https://mvnrepository.com/artifact/org.hibernate/hibernate-ehcache
+    compile group: 'org.hibernate', name: 'hibernate-ehcache', version: '5.2.12.Final'
+
 
     testCompile group: 'junit', name: 'junit', version: '4.12'
 }

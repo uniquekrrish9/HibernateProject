@@ -15,30 +15,16 @@ public class MainClass {
         Session session = sessionFactory.openSession();
         session.beginTransaction();
 
-        Student student = new Student("Shyam","Kathmandu");
-        Student student1 = new Student("Hari","Pokhara");
-
-        Project project = new Project(1,"Online Examination");
-        Project project1 = new Project(2,"Online News Portal");
-
-        student.getProjects().add(project);
-        student.getProjects().add(project1);
-
-        student1.getProjects().add(project);
-        student1.getProjects().add(project1);
-
-        session.save(project);
-        session.save(project1);
-
-        session.save(student);
-        session.save(student1);
-
-
-
+        Student student = session.get(Student.class,1);
+        System.out.println("Name of id 1:"+student.getName());
         session.getTransaction().commit();
         session.close();
 
-
-
+        Session session1 = sessionFactory.openSession();
+        session1.beginTransaction();
+        Student student1 = session1.get(Student.class,2);
+        System.out.println("Name of id 2:"+student1.getName());
+        session1.getTransaction().commit();
+        session1.close();
     }
 }

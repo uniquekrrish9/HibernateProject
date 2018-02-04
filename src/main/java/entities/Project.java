@@ -19,6 +19,9 @@ public class Project {
     @ManyToMany(mappedBy = "projects")
     private Set<Student> students = new HashSet<>();
 
+    public Project() {
+    }
+
     public Project(Integer id, String projectName) {
         this.id = id;
         this.projectName = projectName;

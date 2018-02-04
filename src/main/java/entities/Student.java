@@ -5,6 +5,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 @Entity
+@Cacheable
 @Table(name="Student_table")
 public class Student {
     @Id
