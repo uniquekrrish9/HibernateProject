@@ -1,7 +1,4 @@
-import entities.Address;
-import entities.Plan;
-import entities.Student;
-import entities.Vehicle;
+import entities.*;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
@@ -18,22 +15,29 @@ public class MainClass {
         Session session = sessionFactory.openSession();
         session.beginTransaction();
 
-        Student student = new Student("sita","Pokhara");
+        Student student = new Student("Shyam","Kathmandu");
+        Student student1 = new Student("Hari","Pokhara");
 
+        Project project = new Project(1,"Online Examination");
+        Project project1 = new Project(2,"Online News Portal");
 
+        student.getProjects().add(project);
+        student.getProjects().add(project1);
 
-        Plan plan = new Plan(2,"Premium");
-        session.save(plan);
+        student1.getProjects().add(project);
+        student1.getProjects().add(project1);
 
-        student.setPlan(plan);
+        session.save(project);
+        session.save(project1);
+
         session.save(student);
+        session.save(student1);
+
+
 
         session.getTransaction().commit();
         session.close();
 
-
-//        Student student= new Student("Arun Thapa","Kathmandu");
-//        StudentService studentService=new StudentService();
 
 
     }

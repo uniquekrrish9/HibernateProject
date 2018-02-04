@@ -18,9 +18,13 @@ public class Student {
     @Column(name="Address")
     private String address;
 
-    @ManyToOne
-    @JoinColumn(name="plan_id",nullable = false)
-    private Plan plan;
+    @ManyToMany(fetch = FetchType.EAGER)
+    @JoinTable(
+            name = "student_project",
+            joinColumns = {@JoinColumn(name = "student_id")},
+            inverseJoinColumns = {@JoinColumn(name = "project_id")}
+    )
+    Set<Project> projects = new HashSet<Project>();
 
     public Student(){
 
@@ -55,11 +59,11 @@ public class Student {
         this.address = address;
     }
 
-    public Plan getPlan() {
-        return plan;
+    public Set<Project> getProjects() {
+        return projects;
     }
 
-    public void setPlan(Plan plan) {
-        this.plan = plan;
+    public void setProjects(Set<Project> projects) {
+        this.projects = projects;
     }
 }

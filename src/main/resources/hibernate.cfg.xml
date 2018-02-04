@@ -8,12 +8,13 @@
         <property name="hibernate.connection.username">root</property>
         <property name="hibernate.connection.password">system</property>
 
-        <property name="hibernate.hbm2ddl.auto">update</property>
+        <property name="hibernate.hbm2ddl.auto">Create</property>
         <property name="hibernate.show_sql">true</property>
 
         <mapping class="entities.Student"></mapping>
         <mapping class="entities.Address"></mapping>
         <mapping class="entities.Vehicle"></mapping>
         <mapping class="entities.Plan"></mapping>
+        <mapping class="entities.Project"></mapping>
     </session-factory>
 </hibernate-configuration>
