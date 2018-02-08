@@ -19,13 +19,14 @@ public class Student {
     @Column(name="Address")
     private String address;
 
-    @ManyToMany(fetch = FetchType.EAGER)
-    @JoinTable(
-            name = "student_project",
-            joinColumns = {@JoinColumn(name = "student_id")},
-            inverseJoinColumns = {@JoinColumn(name = "project_id")}
-    )
-    Set<Project> projects = new HashSet<Project>();
+//    @ManyToMany(fetch = FetchType.EAGER)
+//    @JoinTable(
+//            name = "student_project",
+//            joinColumns = {@JoinColumn(name = "student_id")},
+//            inverseJoinColumns = {@JoinColumn(name = "project_id")}
+//    )
+    @OneToMany(fetch = FetchType.LAZY,cascade = CascadeType.ALL,mappedBy = "student")
+    Set<Vehicle> vehicles = new HashSet<>();
 
     public Student(){
 
@@ -60,11 +61,11 @@ public class Student {
         this.address = address;
     }
 
-    public Set<Project> getProjects() {
-        return projects;
+    public Set<Vehicle> getVehicles() {
+        return vehicles;
     }
 
-    public void setProjects(Set<Project> projects) {
-        this.projects = projects;
+    public void setVehicles(Set<Vehicle> vehicles) {
+        this.vehicles = vehicles;
     }
 }

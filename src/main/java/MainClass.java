@@ -14,17 +14,23 @@ public class MainClass {
         SessionFactory sessionFactory = new Configuration().configure().buildSessionFactory();
         Session session = sessionFactory.openSession();
         session.beginTransaction();
+//
+        Student student = new Student("ram","pokhara");
 
-        Student student = session.get(Student.class,1);
-        System.out.println("Name of id 1:"+student.getName());
+        Vehicle vehicle = new Vehicle("Car");
+        Vehicle vehicle1 = new Vehicle("Bike");
+
+        vehicle.setStudent(student);
+        vehicle1.setStudent(student);
+
+        student.getVehicles().add(vehicle);
+        student.getVehicles().add(vehicle1);
+        session.save(student);
+
+//        Student student=(Student)session.get(Student.class,1);
+//        session.delete(student);
+
         session.getTransaction().commit();
         session.close();
-
-        Session session1 = sessionFactory.openSession();
-        session1.beginTransaction();
-        Student student1 = session1.get(Student.class,2);
-        System.out.println("Name of id 2:"+student1.getName());
-        session1.getTransaction().commit();
-        session1.close();
     }
 }

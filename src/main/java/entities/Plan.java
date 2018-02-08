@@ -28,13 +28,13 @@ public class Plan {
         this.id = id;
     }
 
-    public String getPlanName() {
-        return planName;
-    }
-
-    public void setPlanName(String planName) {
-        this.planName = planName;
-    }
+//    public String getPlanName() {
+//        return planName;
+//    }
+//
+//    public void setPlanName(String planName) {
+//        this.planName = planName;
+//    }
 
 
 }

@@ -16,8 +16,8 @@ public class Project {
     @Column(name = "project_name")
     private String projectName;
 
-    @ManyToMany(mappedBy = "projects")
-    private Set<Student> students = new HashSet<>();
+//    @ManyToMany(mappedBy = "projects")
+//    private Set<Student> students = new HashSet<>();
 
     public Project() {
     }
@@ -43,11 +43,11 @@ public class Project {
         this.projectName = projectName;
     }
 
-    public Set<Student> getStudents() {
-        return students;
-    }
-
-    public void setStudents(Set<Student> students) {
-        this.students = students;
-    }
+//    public Set<Student> getStudents() {
+//        return students;
+//    }
+//
+//    public void setStudents(Set<Student> students) {
+//        this.students = students;
+//    }
 }
